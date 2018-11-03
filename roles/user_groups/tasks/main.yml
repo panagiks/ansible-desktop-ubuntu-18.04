@@ -4,6 +4,5 @@
   user:
     name={{ item.name }}
     append=yes
-    groups={{ item.group }}
-  when: item.group is defined
+    groups={{ item.groups }}
   with_items: "{{ users }}"

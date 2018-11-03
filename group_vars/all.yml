@@ -36,8 +36,7 @@ pip_install_packages:
   - name: virtualenvwrapper
 users:
   - name: "{{ username }}"
-    sudoer: yes
-    group: "sudo, docker"
+    groups: "sudo, docker"
 ohmyzsh_users:
   - username: "{{ username }}"
     usergroup: "{{ username }}"

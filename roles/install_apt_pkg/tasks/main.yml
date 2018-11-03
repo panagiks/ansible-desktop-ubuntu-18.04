@@ -13,5 +13,5 @@
 
 - name: Install apt packages
   apt:
-    name: golang-go
+    name: "{{ item }}"
   with_items: "{{ apt_pkgs }}"
