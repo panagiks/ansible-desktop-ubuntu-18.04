@@ -7,6 +7,7 @@ profile_file: "{{ home }}/.profile"
 nodejs_version: "8.x"
 pip_package: python3-pip
 virtualbox_install_dkms: yes
+docker_install_compose: yes
 ohmyzsh_plugins: debian docker git git-extras git-flow history ng node npm pip python ssh-agent sudo virtualenvwrapper
 create_folders:
   - "{{ projects_folder }}"
