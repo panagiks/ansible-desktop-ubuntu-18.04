@@ -34,10 +34,16 @@ apt_pkgs:
   - adapta-backgrounds
   - apt-transport-https
   - code
+  - curl
+  - g++
+  - gcc
+  - gnome-tweak-tool
   - golang-go
   - insomnia
+  - ubuntu-restricted-extras
   - virtualbox
   - virtualbox-ext-pack
+  - wget
 pip_install_packages:
   - name: docker
   - name: virtualenvwrapper
