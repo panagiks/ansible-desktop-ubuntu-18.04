@@ -27,7 +27,11 @@ apt_repos:
   - "deb https://dl.bintray.com/getinsomnia/Insomnia /"
   # VSCode repo
   - "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+  # Adapta theme ppa
+  - "ppa:tista/adapta"
 apt_pkgs:
+  - adapta-gtk-theme
+  - adapta-backgrounds
   - apt-transport-https
   - code
   - golang-go
