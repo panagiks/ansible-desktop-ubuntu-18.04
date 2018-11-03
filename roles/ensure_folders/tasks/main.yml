@@ -1,0 +1,11 @@
+---
+
+- name: Create folder for dev stuff
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: "{{ username }}"
+    group: "{{ username }}"
+    mode: 0750
+  with_items: "{{ create_folders }}"
+

@@ -1,0 +1,23 @@
+---
+
+- name: Ubuntu 18.04 Desktop playbook
+  hosts: localhost
+  become: yes
+  become_user: root
+  roles:
+    # Add apt repos and install packages
+    - install_apt_pkg
+    # Install Pip, Docker, Node.js
+    - geerlingguy.pip
+    - geerlingguy.docker
+    - geerlingguy.nodejs
+    # Add users to their groups
+    - user_groups
+    # Create required folders
+    - ensure_folders
+    # Oh-My-ZSH
+    - jebovic.ohmyzsh
+    # Install virtualbox
+    - hubisan.virtualbox
+    # Create / Update config files
+    - config_files

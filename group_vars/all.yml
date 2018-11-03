@@ -1,0 +1,55 @@
+username: panagiks
+home: "/home/{{ username }}"
+projects_folder: "{{ home }}/devel"
+virtualenv_folder: "{{ home }}/.venvs"
+gopath: "{{ home }}/go"
+profile_file: "{{ home }}/.profile"
+nodejs_version: "8.x"
+pip_package: python3-pip
+virtualbox_install_dkms: yes
+ohmyzsh_plugins: debian docker git git-extras git-flow history ng node npm pip python ssh-agent sudo virtualenvwrapper
+create_folders:
+  - "{{ projects_folder }}"
+  - "{{ virtualenv_folder }}"
+  - "{{ gopath }}"
+apt_repo_keys:
+  - https://insomnia.rest/keys/debian-public.key.asc
+  - https://packages.microsoft.com/keys/microsoft.asc
+apt_repos:
+  # Add repo required in 18.04 for python3-pip
+  # May be obsolete when geerlingguy/ansible-role-pip#12
+  # is resolved
+  - "deb http://archive.ubuntu.com/ubuntu bionic universe"
+  # Golang ppa for Ubuntu 18.04
+  - "ppa:longsleep/golang-backports"
+  # Insomnia API tester repo
+  - "deb https://dl.bintray.com/getinsomnia/Insomnia /"
+  # VSCode repo
+  - "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+apt_pkgs:
+  - apt-transport-https
+  - code
+  - golang-go
+  - insomnia
+pip_install_packages:
+  - name: docker
+  - name: virtualenvwrapper
+users:
+  - name: "{{ username }}"
+    sudoer: yes
+    group: "sudo, docker"
+ohmyzsh_users:
+  - username: "{{ username }}"
+    usergroup: "{{ username }}"
+    home: "{{ home }}"
+config_contents:
+  - name: virtualenvwrapper
+    path: "{{ profile_file }}"
+    block: |
+      export WORKON_HOME={{ virtualenv_folder }}
+      export PROJECT_HOME={{ projects_folder }}
+  - name: golang
+    path: "{{ profile_file }}"
+    block: |
+      export GOPATH={{ gopath }}
+      export PATH=${PATH}:${GOPATH}/bin

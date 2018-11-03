@@ -1,0 +1,9 @@
+---
+
+- name: Create / Update config files
+  blockinfile:
+    path: "{{ item.path }}"
+    block: "{{ item.block }}"
+    marker: "# {mark} ANSIBLE MANAGED BLOCK {{ item.name }}"
+    create: yes
+  with_items: "{{ config_contents }}"

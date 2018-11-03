@@ -1,0 +1,17 @@
+---
+
+- name: Add repo keys
+  apt_key:
+    url: "{{ item }}"
+  with_items: "{{ apt_repo_keys }}"
+
+- name: Add repositories
+  apt_repository:
+    repo: "{{ item }}"
+    state: present
+  with_items: "{{ apt_repos }}"
+
+- name: Install apt packages
+  apt:
+    name: golang-go
+  with_items: "{{ apt_pkgs }}"

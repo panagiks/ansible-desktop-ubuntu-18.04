@@ -1,0 +1,9 @@
+---
+
+- name: Add users to their groups
+  user:
+    name={{ item.name }}
+    append=yes
+    groups={{ item.group }}
+  when: item.group is defined
+  with_items: "{{ users }}"
