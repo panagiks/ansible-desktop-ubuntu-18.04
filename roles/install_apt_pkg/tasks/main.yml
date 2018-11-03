@@ -13,5 +13,4 @@
 
 - name: Install apt packages
   apt:
-    name: "{{ item }}"
-  with_items: "{{ apt_pkgs }}"
+    name: "{{ apt_pkgs }}"
