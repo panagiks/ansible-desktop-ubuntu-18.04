@@ -31,6 +31,8 @@ apt_pkgs:
   - code
   - golang-go
   - insomnia
+  - virtualbox
+  - virtualbox-ext-pack
 pip_install_packages:
   - name: docker
   - name: virtualenvwrapper

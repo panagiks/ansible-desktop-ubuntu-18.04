@@ -17,7 +17,5 @@
     - ensure_folders
     # Oh-My-ZSH
     - jebovic.ohmyzsh
-    # Install virtualbox
-    - hubisan.virtualbox
     # Create / Update config files
     - config_files
