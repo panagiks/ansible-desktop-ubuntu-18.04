@@ -1,4 +1,4 @@
-username: panagiks
+# "username" variable defined in the playbook
 home: "/home/{{ username }}"
 projects_folder: "{{ home }}/devel"
 virtualenv_folder: "{{ home }}/.venvs"
