@@ -2,8 +2,8 @@
 
 - name: Ubuntu 18.04 Desktop playbook
   hosts: localhost
-  become: yes
-  become_user: root
+  vars:
+    username: panagiks
   roles:
     # Add apt repos and install packages
     - install_apt_pkg
