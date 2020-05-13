@@ -2,3 +2,4 @@
 - src: geerlingguy.pip
 - src: geerlingguy.nodejs
 - src: jebovic.ohmyzsh
+- src: fubarhouse.golang

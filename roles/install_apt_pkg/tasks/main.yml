@@ -4,17 +4,18 @@
   apt:
     name: "apt-transport-https"
 
-- name: Add repo keys
-  apt_key:
-    url: "{{ item }}"
-  with_items: "{{ apt_repo_keys }}"
-
 - name: Add repositories
   apt_repository:
     repo: "{{ item }}"
     state: present
   with_items: "{{ apt_repos }}"
 
-- name: Install apt packages
+- name: Install apt packages (from repo)
   apt:
-    name: "{{ apt_pkgs }}"
+    name: "{{ item }}"
+  with_items: "{{ apt_pkgs }}"
+
+- name: Install apt packages (from deb)
+  apt:
+    name: "{{ item }}"
+  with_items: "{{ apt_debs }}"

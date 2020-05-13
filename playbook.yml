@@ -7,10 +7,14 @@
   roles:
     # Add apt repos and install packages
     - install_apt_pkg
+    # Install snap packages
+    - install_snap_pkg
     # Install Pip, Docker, Node.js
     - geerlingguy.pip
     - geerlingguy.docker
     - geerlingguy.nodejs
+    # Install golang
+    - fubarhouse.golang
     # Add users to their groups
     - user_groups
     # Create required folders
