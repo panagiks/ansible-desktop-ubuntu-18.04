@@ -16,5 +16,5 @@
 
 - name: Install apt packages (from deb)
   apt:
-    name: "{{ item }}"
+    deb: "{{ item }}"
   with_items: "{{ apt_debs }}"
