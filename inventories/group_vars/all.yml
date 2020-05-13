@@ -20,8 +20,6 @@ apt_repos:
   # May be obsolete when geerlingguy/ansible-role-pip#12
   # is resolved
   - "deb http://archive.ubuntu.com/ubuntu bionic universe"
-  # Adapta theme ppa
-  - "ppa:tista/adapta"
 apt_pkgs:
   - adapta-gtk-theme
   - adapta-backgrounds
