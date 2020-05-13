@@ -12,8 +12,7 @@
 
 - name: Install apt packages (from repo)
   apt:
-    name: "{{ item }}"
-  with_items: "{{ apt_pkgs }}"
+    name: "{{ apt_pkgs }}"
 
 - name: Install apt packages (from deb)
   apt:
