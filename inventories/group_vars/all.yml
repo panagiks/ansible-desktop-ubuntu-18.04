@@ -61,5 +61,5 @@ config_contents:
   - name: golang
     path: "{{ profile_file }}"
     block: |
-      export GOPATH={{ gopath }}
+      export GOPATH={{ GOPATH }}
       export PATH=${PATH}:${GOPATH}/bin
