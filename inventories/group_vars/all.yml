@@ -62,4 +62,4 @@ config_contents:
     path: "{{ profile_file }}"
     block: |
       export GOPATH={{ GOPATH }}
-      export PATH=${PATH}:${GOPATH}/bin
+      export PATH=${PATH}:${GOPATH}/bin:{{ GOROOT }}/bin
