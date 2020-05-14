@@ -6,7 +6,7 @@ profile_file: "{{ home }}/.profile"
 nodejs_version: "10.x"
 pip_package: python3-pip
 virtualbox_install_dkms: yes
-docker_apt_repository: "deb [arch={{ docker_apt_arch }}] https://download.docker.com/linux/{{ ansible_distribution | lower }} bionic {{ docker_apt_release_channel }}"
+docker_apt_repository: "deb [arch={{ docker_apt_arch }}] https://download.docker.com/linux/{{ ansible_distribution | lower }} bionicg {{ docker_apt_release_channel }}"
 docker_install_compose: yes
 ohmyzsh_plugins: debian docker git git-extras git-flow history ng node npm pip python sudo virtualenvwrapper
 go_version: 1.10.4
@@ -28,7 +28,6 @@ apt_pkgs:
   - gnome-tweak-tool
   - ubuntu-restricted-extras
   - virtualbox
-  - virtualbox-ext-pack
   - wget
 apt_debs:
   - https://zoom.us/client/latest/zoom_amd64.deb
@@ -56,3 +55,8 @@ config_contents:
     block: |
       export WORKON_HOME={{ virtualenv_folder }}
       export PROJECT_HOME={{ projects_folder }}
+  - name: golang
+    path: "{{ profile_file }}"
+    block: |
+      export GOPATH={{ gopath }}
+      export PATH=${PATH}:${GOPATH}/bin
