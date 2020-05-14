@@ -14,10 +14,12 @@ GOPATH: "{{ home }}/go"
 GOROOT: /usr/local/go
 create_folders:
   - "{{ projects_folder }}"
+  - "{{ projects_folder }}/work"
+  - "{{ projects_folder }}/personal"
   - "{{ virtualenv_folder }}"
   - "{{ GOPATH }}"
 apt_repos:
-  # Add repo required in 18.04 for python3-pip
+  # Add repo required in 20.04 for python3-pip
   # May be obsolete when geerlingguy/ansible-role-pip#12
   # is resolved
   - "deb http://archive.ubuntu.com/ubuntu focal universe"
@@ -53,6 +55,7 @@ config_contents:
   - name: virtualenvwrapper
     path: "{{ profile_file }}"
     block: |
+      export VIRTUALENVWRAPPER_PYTHON=$(which python3)
       export WORKON_HOME={{ virtualenv_folder }}
       export PROJECT_HOME={{ projects_folder }}
   - name: golang
