@@ -24,13 +24,25 @@ apt_repos:
   # is resolved
   - "deb http://archive.ubuntu.com/ubuntu focal universe"
 apt_pkgs:
+  - bat
+  - caffeine
   - curl
+  - fswatch
   - g++
   - gcc
   - gnome-tweak-tool
+  - jq
+  - kafkacat
+  - mingw-w64
+  - mtr-tiny
+  - net-tools
+  - openconnect
+  - pass
+  - plank
   - ubuntu-restricted-extras
   - virtualbox
   - wget
+  - youtube-dl
 apt_debs:
   - https://zoom.us/client/latest/zoom_amd64.deb
 snap_pkgs:
