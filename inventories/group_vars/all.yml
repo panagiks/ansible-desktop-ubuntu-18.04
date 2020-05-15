@@ -18,11 +18,21 @@ create_folders:
   - "{{ projects_folder }}/personal"
   - "{{ virtualenv_folder }}"
   - "{{ GOPATH }}"
+apt_repo_keys:
+  - https://packages.gitlab.com/runner/gitlab-runner/gpgkey
+  - https://pkgs.tailscale.com/stable/ubuntu/eoan.gpg
+  - https://raw.githubusercontent.com/zerotier/ZeroTierOne/master/doc/contact%40zerotier.com.gpg
+  - https://packages.cloud.google.com/apt/doc/apt-key.gpg
 apt_repos:
   # Add repo required in 20.04 for python3-pip
   # May be obsolete when geerlingguy/ansible-role-pip#12
   # is resolved
   - "deb http://archive.ubuntu.com/ubuntu focal universe"
+  - "deb https://packages.gitlab.com/runner/gitlab-runner/ubuntu/ bionic main"
+  - "deb-src https://packages.gitlab.com/runner/gitlab-runner/ubuntu/ bionic main"
+  - "deb https://pkgs.tailscale.com/stable/ubuntu eoan main"
+  - "deb https://download.zerotier.com/debian/bionic bionic main"
+  - "deb https://apt.kubernetes.io/ kubernetes-xenial main"
 apt_pkgs:
   - bat
   - caffeine
@@ -30,21 +40,26 @@ apt_pkgs:
   - fswatch
   - g++
   - gcc
+  - gitlab-runner
   - gnome-tweak-tool
   - jq
   - kafkacat
+  - kubectl
   - mingw-w64
   - mtr-tiny
   - net-tools
   - openconnect
   - pass
   - plank
+  - steam-installer
+  - tailscale
   - ubuntu-restricted-extras
   - virtualbox
   - wget
   - youtube-dl
 apt_debs:
   - https://zoom.us/client/latest/zoom_amd64.deb
+  - https://github.com/wagoodman/dive/releases/download/v0.9.2/dive_0.9.2_linux_amd64.deb
 snap_pkgs:
   - code
   - dbeaver-ce
