@@ -37,6 +37,7 @@ apt_pkgs:
   - bat
   - caffeine
   - curl
+  - fonts-powerline
   - fswatch
   - g++
   - gcc
@@ -85,8 +86,16 @@ config_contents:
       export VIRTUALENVWRAPPER_PYTHON=$(which python3)
       export WORKON_HOME={{ virtualenv_folder }}
       export PROJECT_HOME={{ projects_folder }}
+  - name: oh-my-zsh-date-prompt
+    path: "{{ profile_file }}"
+    block: |
+      export RPROMPT="[%D{%f/%m}|%@]"
   - name: golang
     path: "{{ profile_file }}"
     block: |
       export GOPATH={{ GOPATH }}
       export PATH=${PATH}:${GOPATH}/bin:{{ GOROOT }}/bin
+  - name: oh-my-zsh-disable-username-at-host
+    path: "{{ home }}/.zshrc"
+    block: |
+      prompt_context(){}
