@@ -48,6 +48,7 @@ apt_pkgs:
   - kubectl
   - mingw-w64
   - mtr-tiny
+  - network-manager-openvpn-gnome
   - net-tools
   - openconnect
   - openvpn
