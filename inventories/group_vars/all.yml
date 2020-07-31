@@ -51,6 +51,7 @@ apt_pkgs:
   - network-manager-openvpn-gnome
   - net-tools
   - openconnect
+  - openresolv
   - openvpn
   - pass
   - plank
