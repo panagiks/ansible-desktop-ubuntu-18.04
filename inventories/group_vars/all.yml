@@ -50,6 +50,7 @@ apt_pkgs:
   - mtr-tiny
   - net-tools
   - openconnect
+  - openvpn
   - pass
   - plank
   - steam-installer
