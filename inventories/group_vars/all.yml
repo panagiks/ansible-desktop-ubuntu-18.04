@@ -89,7 +89,7 @@ config_contents:
   - name: oh-my-zsh-date-prompt
     path: "{{ profile_file }}"
     block: |
-      export RPROMPT="[%D{%f/%m}|%@]"
+      export RPROMPT="[%D{{ '{' }}%f/%m{{ '}' }}|%@]"
   - name: golang
     path: "{{ profile_file }}"
     block: |
