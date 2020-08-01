@@ -2,7 +2,6 @@
 home: "/home/{{ username }}"
 projects_folder: "{{ home }}/devel"
 virtualenv_folder: "{{ home }}/.venvs"
-profile_file: "{{ home }}/.profile"
 nodejs_version: "10.x"
 pip_package: python3-pip
 virtualbox_install_dkms: yes
@@ -85,17 +84,17 @@ ohmyzsh_users:
     home: "{{ home }}"
 config_contents:
   - name: virtualenvwrapper
-    path: "{{ profile_file }}"
+    path: "{{ home }}/.zshrc"
     block: |
       export VIRTUALENVWRAPPER_PYTHON=$(which python3)
       export WORKON_HOME={{ virtualenv_folder }}
       export PROJECT_HOME={{ projects_folder }}
   - name: oh-my-zsh-date-prompt
-    path: "{{ profile_file }}"
+    path: "{{ home }}/.zshrc"
     block: |
       export RPROMPT="[%D{{ '{' }}%f/%m{{ '}' }}|%@]"
   - name: golang
-    path: "{{ profile_file }}"
+    path: "{{ home }}/.zshrc"
     block: |
       export GOPATH={{ GOPATH }}
       export PATH=${PATH}:${GOPATH}/bin:{{ GOROOT }}/bin
