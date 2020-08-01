@@ -37,6 +37,7 @@ apt_pkgs:
   - bat
   - caffeine
   - curl
+  - dkms
   - fonts-powerline
   - fswatch
   - g++
@@ -46,6 +47,7 @@ apt_pkgs:
   - jq
   - kafkacat
   - kubectl
+  - libdrm-dev
   - mingw-w64
   - mtr-tiny
   - network-manager-openvpn-gnome
