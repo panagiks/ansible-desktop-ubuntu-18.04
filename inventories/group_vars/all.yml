@@ -36,16 +36,22 @@ apt_pkgs:
   - bat
   - curl
   - dkms
+  - evolution-ews
   - fonts-powerline
   - fswatch
   - g++
   - gcc
   - gitlab-runner
   - gnome-tweak-tool
+  - htop
+  - iperf3
   - jq
   - kafkacat
+  - keepassxc
   - kubectl
   - libdrm-dev
+  - libnfs13
+  - libnfs-dev
   - mingw-w64
   - mtr-tiny
   - network-manager-openvpn-gnome
@@ -55,6 +61,7 @@ apt_pkgs:
   - openvpn
   - pass
   - plank
+  - python3-venv
   - steam-installer
   - tailscale
   - ubuntu-restricted-extras
@@ -98,6 +105,10 @@ config_contents:
     block: |
       export GOPATH={{ GOPATH }}
       export PATH=${PATH}:${GOPATH}/bin:{{ GOROOT }}/bin
+  - name: home-bin
+    path: "{{ home }}/.zshrc"
+    block: |
+      export PATH=${PATH}:${HOME}/.local/bin
   - name: oh-my-zsh-disable-username-at-host
     path: "{{ home }}/.zshrc"
     block: |
