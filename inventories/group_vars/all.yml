@@ -49,7 +49,9 @@ apt_pkgs:
   - kafkacat
   - keepassxc
   - kubectl
+  - libcairo2-dev
   - libdrm-dev
+  - libgirepository1.0-dev
   - libnfs13
   - libnfs-dev
   - mingw-w64
@@ -78,7 +80,9 @@ snap_pkgs:
   - gitkraken
   - insomnia
   - rocketchat-desktop
+  - postman
   - spotify
+  - travis
 pip_install_packages:
   - name: docker
   - name: virtualenvwrapper
